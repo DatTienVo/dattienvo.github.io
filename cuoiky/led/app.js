@@ -1,10 +1,13 @@
-var ledImgON = '../picture/2.png'
-var ledImgOFF = '../picture/1.png'
+var ledImgON = '/cuoiky/picture/2.png'
+var ledImgOFF = '/cuoiky/picture/1.png'
 
-var originClass = 'led-btn ' 
-var ledClassON  = originClass + 'ledON'
+var originClass = 'led-btn '
+var ledClassON = originClass + 'ledON'
 var ledClassOFF = originClass + 'ledOFF'
 
+
+var blinkInterval = 1000
+var blinktimes = 5
 
 var channelID = 1585273
 var readAPIKey = 'ZYX2R6HBOVRFVM6U'
@@ -71,51 +74,78 @@ function SendValueYesorNo() {
 	return (Date.now() - lastedWriteTime >= updateLimit)
 }
 
-for (const led of document.querySelectorAll('.led-btn')) led.addEventListener('click', function(event) {
+for (const led of document.querySelectorAll('.led-control')) led.addEventListener('click', function(event) {
 
-	// event.target.src = event.target.src.includes(ledImgON) ? ledImgOFF : ledImgON
-	
-	//console.log(event.target.getAttribute("class"))
-	
-	event.target.setAttribute("class",   event.target.getAttribute("class").includes(ledClassON) ? ledClassOFF : ledClassON )
-	
-	document.querySelectorAll( ".led-control" ).forEach( function(led,idx) {
-		if(event.target.id.includes(idx.toString())) {
-		if(event.target.getAttribute("class").includes(ledClassON)) led.src= ledImgON
-		else led.src= ledImgOFF
-		}
-		
-	})
-		
-	
-	
-	//console.log(event.target.getAttribute("class"))
+	// console.log(event.target.src)
+
+	event.target.src = event.target.src.includes(ledImgON) ? ledImgOFF : ledImgON
 
 	let data = 0
-	document.querySelectorAll('.led-btn').forEach(function(led, idx) {
-		//data |= (led.src.includes(ledImgON) ? 0x1 : 0x0) << idx
-		// console.log(led.getAttribute("class"))
-		data |= (led.getAttribute("class").includes(ledClassON) ? 0x1 : 0x0) << idx
+	document.querySelectorAll('.led-control').forEach(function(led, idx) {
+		data |= (led.src.includes(ledImgON) ? 0x1 : 0x0) << idx
 	})
 
 	controlsender('field1', data)
+
+
 })
+
+
+
+
+
+
+
 
 
 function updateLedsField1() {
 	getNewValueInField('field1', 1, function(data) {
-		document.querySelectorAll('.led-btn').forEach((led, idx) => {
-			// led.src = data & (0x1 << idx) ? ledImgON : ledImgOFF
-			led.setAttribute("class", data & (0x1 << idx) ? ledClassON : ledClassOFF)
+		document.querySelectorAll('.led-control').forEach((led, idx) => {
+			led.src = data & (0x1 << idx) ? ledImgON : ledImgOFF
 		})
 	})
 }
-updateLedsField1()
+
+
+function blinkOnce() {
+
+	if (blinktimes > 0) {
+		setTimeout(function() {
+			for (const blink of document.querySelectorAll('.blink-once')) {
+				blink.src = blink.src.includes(ledImgON) ? ledImgOFF : ledImgON
+			}
+			blinkOnce()
+			blinktimes = blinktimes - 1
+			// console.log(blinktimes)
+		}, blinkInterval)
+	}
+
+	if (blinktimes <= 0) {
+		console.log('end blink')
+		setInterval(function() {
+			for (const blink of document.querySelectorAll('.ledblink')) {
+				blink.src = blink.src.includes(ledImgON) ? ledImgOFF : ledImgON
+			}
+
+
+		}, blinkInterval)
+
+		updateLedsField1()
+	}
+
+
+
+
+}
+
+blinkOnce()
 
 function updateledField2() {
 	getNewValueInField('field2', 2, function(data) {
 		document.querySelector('.slider').value = data
 		document.querySelector('.led-brightness').src = data <= 0 ? ledImgOFF : ledImgON
+		
+		document.querySelector('.range-value').innerHTML = Math.round( (data/1023)*100 ) 
 	})
 
 
@@ -125,6 +155,7 @@ updateledField2()
 document.querySelector('.slider').addEventListener('change', function(event) {
 	controlsender('field2', event.target.value, function(temp) {})
 	document.querySelector('.led-brightness').src = event.target.value <= 0 ? ledImgOFF : ledImgON
+	document.querySelector('.range-value').innerHTML = Math.round( (event.target.value/1023)*100 )
 })
 
 
@@ -133,7 +164,7 @@ for (const button of document.querySelectorAll('.led-ctrlall-btn')) button.addEv
 
 	controlsender('field1', isON ? 0xF : 0x0)
 	//for (const led of document.querySelectorAll('.led-btn')) led.src = isON ? ledImgON : ledImgOFF
-	for (const led of document.querySelectorAll('.led-control')) led.src=isON ?ledImgON :ledImgOFF
+	for (const led of document.querySelectorAll('.led-control')) led.src = isON ? ledImgON : ledImgOFF
 })
 
 
