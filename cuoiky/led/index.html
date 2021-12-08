@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design." />
+	<meta name="robots" content="all" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<title>YC 2</title>
+	<script src="/cuoiky/Menu/includeHTML.js"></script>
+
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.led-ctrlall-btn {
+			font-size: 20px;
+		}
+
+		.led-btn {
+			font-size: 20px;
+		}
+
+		table {
+			margin-left: 460px;
+		}
+
+		button:hover {
+			background-color: #65ec2b;
+		}
+
+		.menus {
+			text-align: center;
+			padding: 80px;
+		}
+
+		.led-ctrlall-btn {
+			background-color: #FF6A6A;
+		}
+
+		img.x {
+			position: absolute;
+			left: 460px;
+			top: 80px;
+			z-index: -1;
+		}
+
+		.led-brightness {
+			padding-top: 0px;
+			padding-left: 250px;
+		}
+
+		/* customizable snowflake styling */
+		.snowflake {
+			color: #fff;
+			font-size: 1em;
+			font-family: Arial, sans-serif;
+			text-shadow: 0 0 5px #000;
+		}
+
+		@-webkit-keyframes snowflakes-fall {
+			0% {
+				top: -10%
+			}
+
+			100% {
+				top: 100%
+			}
+		}
+
+		@-webkit-keyframes snowflakes-shake {
+
+			0%,
+			100% {
+				-webkit-transform: translateX(0);
+				transform: translateX(0)
+			}
+
+			50% {
+				-webkit-transform: translateX(80px);
+				transform: translateX(80px)
+			}
+		}
+
+		@keyframes snowflakes-fall {
+			0% {
+				top: -10%
+			}
+
+			100% {
+				top: 100%
+			}
+		}
+
+		@keyframes snowflakes-shake {
+
+			0%,
+			100% {
+				transform: translateX(0)
+			}
+
+			50% {
+				transform: translateX(80px)
+			}
+		}
+
+		.snowflake {
+			position: fixed;
+			top: -10%;
+			z-index: 9999;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			cursor: default;
+			-webkit-animation-name: snowflakes-fall, snowflakes-shake;
+			-webkit-animation-duration: 10s, 3s;
+			-webkit-animation-timing-function: linear, ease-in-out;
+			-webkit-animation-iteration-count: infinite, infinite;
+			-webkit-animation-play-state: running, running;
+			animation-name: snowflakes-fall, snowflakes-shake;
+			animation-duration: 10s, 3s;
+			animation-timing-function: linear, ease-in-out;
+			animation-iteration-count: infinite, infinite;
+			animation-play-state: running, running
+		}
+
+		.snowflake:nth-of-type(0) {
+			left: 1%;
+			-webkit-animation-delay: 0s, 0s;
+			animation-delay: 0s, 0s
+		}
+
+		.snowflake:nth-of-type(1) {
+			left: 10%;
+			-webkit-animation-delay: 1s, 1s;
+			animation-delay: 1s, 1s
+		}
+
+		.snowflake:nth-of-type(2) {
+			left: 20%;
+			-webkit-animation-delay: 6s, .5s;
+			animation-delay: 6s, .5s
+		}
+
+		.snowflake:nth-of-type(3) {
+			left: 30%;
+			-webkit-animation-delay: 4s, 2s;
+			animation-delay: 4s, 2s
+		}
+
+		.snowflake:nth-of-type(4) {
+			left: 40%;
+			-webkit-animation-delay: 2s, 2s;
+			animation-delay: 2s, 2s
+		}
+
+		.snowflake:nth-of-type(5) {
+			left: 50%;
+			-webkit-animation-delay: 8s, 3s;
+			animation-delay: 8s, 3s
+		}
+
+		.snowflake:nth-of-type(6) {
+			left: 60%;
+			-webkit-animation-delay: 6s, 2s;
+			animation-delay: 6s, 2s
+		}
+
+		.snowflake:nth-of-type(7) {
+			left: 70%;
+			-webkit-animation-delay: 2.5s, 1s;
+			animation-delay: 2.5s, 1s
+		}
+
+		.snowflake:nth-of-type(8) {
+			left: 80%;
+			-webkit-animation-delay: 1s, 0s;
+			animation-delay: 1s, 0s
+		}
+
+		.snowflake:nth-of-type(9) {
+			left: 90%;
+			-webkit-animation-delay: 3s, 1.5s;
+			animation-delay: 3s, 1.5s
+		}
+
+		.snowflake:nth-of-type(10) {
+			left: 25%;
+			-webkit-animation-delay: 2s, 0s;
+			animation-delay: 2s, 0s
+		}
+
+		.snowflake:nth-of-type(11) {
+			left: 65%;
+			-webkit-animation-delay: 4s, 2.5s;
+			animation-delay: 4s, 2.5s
+		}
+
+		.gift {
+			position: absolute;
+			width: 60px;
+			height: 50px;
+			background-color: #ffc857;
+			top: 700px;
+			left: 700px;
+			box-shadow: inset -8px 0 0 rgba(0, 0, 0, 0.07);
+
+		}
+
+		.gift:before {
+			content: "";
+			position: absolute;
+			width: 70px;
+			height: 15px;
+			background-color: #ffc857;
+			left: -5px;
+			box-shadow: inset -8px -4px 0 rgba(0, 0, 0, 0.07);
+
+		}
+
+		.gift:after {
+			content: "";
+			background-color: #db3a34;
+			width: 10px;
+			height: 50px;
+			position: absolute;
+			left: 25px;
+		}
+
+		.ribbon {
+			position: absolute;
+			width: 20px;
+			height: 10px;
+			border: 3px solid #db3a34;
+			border-radius: 50%;
+			transform: skew(15deg, 15deg);
+			top: 685px;
+			left: 702px;
+		}
+
+		.ribbon:before {
+			content: "";
+			position: absolute;
+			width: 20px;
+			height: 10px;
+			border: 3px solid #db3a34;
+			border-radius: 50%;
+			transform: skew(-15deg, -20deg);
+			left: 22px;
+			top: -8px;
+		}
+
+		.gift2 {
+			position: absolute;
+			width: 50px;
+			height: 40px;
+			background-color: #08bdbd;
+			top: 710px;
+			left: 660px;
+			box-shadow: inset -8px 0 0 rgba(0, 0, 0, 0.07);
+
+		}
+
+		.gift2:before {
+			content: "";
+			position: absolute;
+			width: 60px;
+			height: 15px;
+			background-color: #08bdbd;
+			left: -5px;
+			box-shadow: inset -8px -4px 0 rgba(0, 0, 0, 0.07);
+
+		}
+
+		.gift2:after {
+			content: "";
+			background-color: #abff4f;
+			width: 10px;
+			height: 40px;
+			position: absolute;
+			left: 15px;
+		}
+
+		.ribbon2 {
+			position: absolute;
+			width: 15px;
+			height: 7px;
+			border: 3px solid #abff4f;
+			border-radius: 50%;
+			transform: skew(15deg, 15deg);
+			top: 700px;
+			left: 660px;
+		}
+
+		.ribbon2:before {
+			content: "";
+			position: absolute;
+			width: 15px;
+			height: 7px;
+			border: 3px solid #abff4f;
+			border-radius: 50%;
+			transform: skew(-15deg, -20deg);
+			left: 15px;
+			top: -8px;
+		}
+	</style>
+
+
+</head>
+
+<body background="https://my-quyen.github.io/KC326-test/background.jpg">
+	
+	<div class="myClass" data-include-html="/cuoiky/Menu/Menu.html"></div>
+
+	<div class="menus">
+
+		<div>
+			<button class="led-ctrlall-btn" type="button" id="ON">Toggle all to ON</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button class="led-ctrlall-btn" type="button" id="OFF">Toggle all to OFF</button>
+		</div>
+		
+		<br>
+		<table cellspacing=25>
+
+			<div class="control">
+				<tr>
+					<td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><img class="led-control" id="led-control0" src="../picture/1.png" alt="" width="70"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><img class="led-control" id="led-control1" src="../picture/1.png" alt="" width="70"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><img class="led-control" id="led-control2" src="../picture/1.png" alt="" width="70"></td>
+					<td></td>
+					<td><img class="led-control" id="led-control2" src="../picture/1.png" alt="" width="70"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td><img class="led-control" id="led-control3" src="../picture/1.png" alt="" width="70"></td>
+					<td><img class="led-control" id="led-control3" src="../picture/1.png" alt="" width="70"></td>
+					<td><img class="led-control" id="led-control3" src="../picture/1.png" alt="" width="70"></td>
+				</tr>
+			</div>
+		</table>
+		<div class="led-btn-container">
+			<button class="led-btn" id="led0">Led 1</button>
+			<button class="led-btn" id="led1">Led 2</button>
+			<button class="led-btn" id="led2">Led 3</button>
+			<button class="led-btn" id="led3">Led 4</button>
+		</div>
+		<div>
+			<img class="led-brightness" src="../picture/1.png" alt="" width="60">
+			<input type="range" min="0" max="1023" value="512" class="slider" name="mySlider">
+		</div>
+
+	</div>
+	<img class="x" src="https://banner2.cleanpng.com/20171127/020/transparent-pine-tree-png-clipart-picture-5a1c49d99b70c7.9979201415118033536367.jpg" width="700px">
+
+	<script src="app.js"></script>
+
+	<div class="snowflakes" aria-hidden="true">
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+		<div class="snowflake">
+			❅
+		</div>
+		<div class="snowflake">
+			❆
+		</div>
+	</div>
+	</style>
+
+	<body>
+		<div class="snowflakes" aria-hidden="true">
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+			<div class="snowflake">❅</div>
+			<div class="snowflake">❆</div>
+		</div>
+		<audio alt="mp3" width="10%" height="30%" autoplay>
+			 	<source src="../picture/audio.mp3" type="audio/mp3" >
+		</audio> 
+		<div class="gift"></div>
+		<div class="ribbon"></div>
+		<div class="gift2"></div>
+		<div class="ribbon2"></div>
+		<div class="gift3"></div>
+		<div class="ribbon3"></div>
+		<div class="shadow"></div>
+		</div>
+		<div id="footer" data-include-html="/cuoiky/Footer/footer.html"></div>
+		<script>
+			includeHTML()
+		</script>
+	</body>
+
+</html>

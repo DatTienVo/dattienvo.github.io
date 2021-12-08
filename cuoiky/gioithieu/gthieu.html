@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang giới thiệu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="/cuoiky/Menu/includeHTML.js"></script>
+    
+</head>
+
+<body>
+    
+    <div class="myClass" data-include-html="/cuoiky/Menu/Menu.html"></div>
+    
+    
+    <section class="team-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>IoT Nhóm 2 &#127808;</h2>
+                    <br><br>
+                </div>
+            </div>
+            <div class="row">
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="11.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Tiến Đạt<br>B1907001</h3>
+                        <p>Cơ điện tử<br>Lập trình phần nhúng<br>Vẽ Chart.js</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="22.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Vĩnh Thuận<br>B1913086</h3>
+                        <p>Quản lý công nghiệp<br>Thiết Kế Header&Footer</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="33.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Trọng Nghĩa<br>B1900171</h3>
+                        <p>Quản lý công nghiệp<br>Thiết Kế Trang Điều Khiển</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="tl.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Thùy Linh<br>B1905993</h3>
+                        <p>Quản ly công nghiệp<br>Thiết Kế Trang Giới Thiệu</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="mq.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Mỹ Quyên<br>B1905973</h3>
+                        <p>Quản lý công nghiệp<br>Thiết Kế Trang Điều Khiển</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+                <!-- card start -->
+                <div class="card">
+                    <div class="card-img">
+                        <img src="mt.jpg" alt="">
+                    </div>
+                    <div class="card-if">
+                        <h3>Minh Thư<br></h3>
+                        <p>Quản lý công nghiệp<br>Thiết Kế Trang Giới Thiệu</p>
+                        <div class="dg">
+                            <p>Đánh giá <span>100%</span></p>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- card end -->
+            </div>
+        </div>
+    </section>
+    
+    
+    <!--footer section starts -->
+    
+    <div id="footer" data-include-html="/cuoiky/Footer/footer.html"></div>
+    <script>
+        includeHTML()
+    </script>
+
+    <!--footer section ends -->
+    <script>
+    
+        for(const rankDiv of document.querySelectorAll('.dg')) {
+            
+            const rankValue = rankDiv.children[0].innerHTML.replace(/[^-0-9.]/g, '')
+            const rankIndicatorElement = rankDiv.children[1].children[0]
+            rankIndicatorElement.style = "width:" + rankValue + '%'
+        }
+        
+    </script>
+     <script>
+
+    let themeColor = document.querySelectorAll('.theme-toggler span');
+    themeColor.forEach(color => color.addEventListener('click', () =>{
+        let background = color.style.background;
+        document.querySelector('body').style.background = background;
+    }));
+
+</script>
+
+</body>
+</html>

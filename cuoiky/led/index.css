@@ -1,0 +1,48 @@
+.form-field-1 img {
+		cursor: pointer;
+	}
+
+.form-field-1 {
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 500px;
+
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
+
+
+
+.form-field-1 .btn {
+	border-radius: 0;
+	border: none;
+
+	border-bottom: 1px solid black;
+
+	flex: 1;
+}
+
+
+.form-field-1 .btn:first-child {
+	border-top-left-radius: 10px;
+	border-right: 1px solid black;
+}
+
+.form-field-1 .btn:last-child {
+	border-top-right-radius: 10px;
+	border-left: 1px solid black;
+}
+
+
+
+
+.form-field-1 .leds-btn {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-field-1 .slider {
+		flex: 1;
+		margin-right: 10px;
+	}
