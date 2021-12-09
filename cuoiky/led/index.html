@@ -19,16 +19,22 @@
 			padding: 0;
 		}
 
-		.led-ctrlall-btn {
-			font-size: 20px;
-		}
+	
 
 		.led-btn {
 			font-size: 20px;
 		}
+		
+/*  		th, td {
+			border: 2px solid black;
+		}  */
 
 		table {
-			margin-left: 460px;
+/* 			border: 2px solid black;  */
+			
+			position: relative;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 
 		button:hover {
@@ -36,24 +42,23 @@
 		}
 
 		.menus {
-			text-align: center;
 			padding: 80px;
+			text-align: center;
 		}
 
-		.led-ctrlall-btn {
-			background-color: #FF6A6A;
-		}
+		
 
 		img.x {
 			position: absolute;
-			left: 460px;
+			left: 50%;
+			transform: translateX(-50%);
 			top: 80px;
 			z-index: -1;
 		}
 
 		.led-brightness {
 			padding-top: 0px;
-			padding-left: 250px;
+/* 			padding-left: 250px; */
 		}
 
 		/* customizable snowflake styling */
@@ -279,6 +284,7 @@
 
 		}
 
+
 		.gift2:after {
 			content: "";
 			background-color: #abff4f;
@@ -310,38 +316,76 @@
 			left: 15px;
 			top: -8px;
 		}
+
+
+		
+.f2-container {
+/* 
+	position: absolute;
+	left: 5%;
+	top: 10%; */
+	width: 300px;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	
+}
+
+.range-value {
+	padding-left: 10px;
+}
+
+.gif-menu {
+ 	position: absolute;
+	 /*
+	top: 80px;
+	left: 0; */
+}
+		
 	</style>
 
 
 </head>
 
 <body background="https://my-quyen.github.io/KC326-test/background.jpg">
-	
+
 	<div class="myClass" data-include-html="/cuoiky/Menu/Menu.html"></div>
-
-	<div class="menus">
-
-		<div>
-			<button class="led-ctrlall-btn" type="button" id="ON">Toggle all to ON</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button class="led-ctrlall-btn" type="button" id="OFF">Toggle all to OFF</button>
+	
+	<div class="gif-menu">
+		<img src="https://media3.giphy.com/media/3o6fJdYXEvMa5ZmlI4/giphy.gif" alt="" width="200">
+		
+		
+		<div class="f2-container">
+			<img class="led-brightness" src="../picture/1.png" alt="" width="60">
+			<input type="range" min="0" max="1023" value="512" class="slider" name="mySlider">
+			<h2 class="range-value">1</h2>
 		</div>
 		
-		<br>
+	</div>
+	
+
+	<div class="menus">
+		
+		
+
+	
+		
 		<table cellspacing=25>
 
 			<div class="control">
+				
 				<tr>
 					<td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><img class="led-ctrlall-btn" id="ON" src="img/img-btn.jpg" alt="" width="80"></td>
 					<td><img class="led-control blink-once" id="led-control0" src="../picture/1.png" alt="" width="70"></td>
 				</tr>
 				<tr>
 					<td></td>
 					<td></td>
 					<td></td>
-					<td></td>
+					<td><img class="led-ctrlall-btn" id="OFF" src="img/img-btn.jpg" alt="" width="80"></td>
 					<td><img class="led-control blink-once" id="led-control1" src="../picture/1.png" alt="" width="70"></td>
 				</tr>
 				<tr>
@@ -357,21 +401,16 @@
 					<td></td>
 					<td></td>
 					<td><img class="led-control ledblink blink-once" src="../picture/1.png" alt="" width="70"></td>
-					<td><img class="led-control ledblink blink-once"  src="../picture/1.png" alt="" width="70"></td>
-					<td><img class="led-control ledblink blink-once"  src="../picture/1.png" alt="" width="70"></td>
+					<td><img class="led-control ledblink blink-once" src="../picture/1.png" alt="" width="70"></td>
+					<td><img class="led-control ledblink blink-once" src="../picture/1.png" alt="" width="70"></td>
 				</tr>
 			</div>
 		</table>
-		
-	
-		<div>
-			<img class="led-brightness" src="../picture/1.png" alt="" width="60">
-			<input type="range" min="0" max="1023" value="512" class="slider" name="mySlider">
-			<h2 class="range-value"></h2>
-		</div>
+
+
 
 	</div>
-	<img class="x" src="https://banner2.cleanpng.com/20171127/020/transparent-pine-tree-png-clipart-picture-5a1c49d99b70c7.9979201415118033536367.jpg" width="700px">
+	<img class="x" src="img/caythong.jpg" width="700px">
 
 	<script src="app.js"></script>
 
@@ -431,8 +470,9 @@
 			<div class="snowflake">❆</div>
 		</div>
 		<audio alt="mp3" width="10%" height="30%" autoplay>
-			 	<source src="../picture/audio.mp3" type="audio/mp3" >
-		</audio> 
+			<source src="../picture/audio.mp3" type="audio/mp3">
+		</audio>
+
 		<div class="gift"></div>
 		<div class="ribbon"></div>
 		<div class="gift2"></div>
