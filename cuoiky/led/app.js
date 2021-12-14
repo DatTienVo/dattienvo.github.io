@@ -9,9 +9,9 @@ var ledClassOFF = originClass + 'ledOFF'
 var blinkInterval = 1000
 var blinktimes = 5
 
-var channelID = 1585273
-var readAPIKey = 'ZYX2R6HBOVRFVM6U'
-var writeAPIKey = '860G3MEUS4OSSWNK'
+var channelID = 1421792
+var readAPIKey = 'DWTWKRWRYGQY0N0M'
+var writeAPIKey = 'SSDLCZWNRHIVMJUF'
 
 var updateLimit = 15000
 var lastedWriteTime = 0
