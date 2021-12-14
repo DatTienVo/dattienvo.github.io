@@ -1,6 +1,6 @@
-var Channell = 1585273
-var Keydoc = 'ZYX2R6HBOVRFVM6U'
-var Keyghi = '860G3MEUS4OSSWNK'
+var Channell = 1421792
+var Keydoc = 'DWTWKRWRYGQY0N0M'
+var Keyghi = 'SSDLCZWNRHIVMJUF'
 
 var Point = 20
 var Timeup = 15000
@@ -62,7 +62,7 @@ function updateDate(length) {
 
 
 
-	ReadNoNull('field2', 2, function(rawData) {
+	ReadNoNull('field3', 3, function(rawData) {
 
 
 
