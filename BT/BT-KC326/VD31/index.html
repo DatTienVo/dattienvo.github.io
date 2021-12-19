@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vidu31</title>
+  
+    <style>
+		.content {text-align: center;}
+	</style>
+	
+	<script>
+		var bulb_status = false;
+		
+		function bulb_toggle() {
+			
+			bulb_status = bulb_status ? false : true;
+			var bulb_ele = document.getElementById('bulb')
+			
+			if (bulb_status) {
+				bulb_ele.src="../picture/lightbulb-on.svg";
+			}
+			else {
+				bulb_ele.src='../picture/lightbulb-off.svg';
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	
+	<div class="content">
+		<img id="bulb" onmousedown="bulb_toggle()" src="../picture/lightbulb-off.svg" alt="" width="300">
+		<h4>Click to toggle the light bulb</h4>
+	</div>
+	
+	
+	<br/><br/>
+	<a href="../index.html">Quay về trang bài tập</a>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vidu29</title>
+    <style>
+		.na1 ul {
+			list-style-type: none;
+			margin: 0;
+             padding: 0;
+			width: 250px;
+			background-color: #f1f1f1;
+			border: 1px solid black;
+		}
+		.na1 li {
+			text-align: center;
+			border-bottom: 1px solid black;
+		}
+		
+		.na1 li:last-child{border-bottom: none;}
+		
+		
+		
+		.na1 li a {
+			display: block;
+			color: black;
+			padding: 8px 16px;
+			text-decoration: none;
+		}
+		
+		.na1 li a:hover:not(.active) {background-color: #555; color: white}
+		
+		.na1 li a.active {
+			background-color: #4caf50;
+			color: white;
+			
+		}
+		
+		.na2 {
+			margin-top: 50px;
+		}
+		
+		
+		.na2 ul {
+			list-style-type: none;
+			margin:0; padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+		
+		.na2 li {float: left}
+		
+		.na2 	li a, .drop-btn {
+			display: inline-block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+		
+		.na2 li a:hover, .dropdown:hover .drop-btn {
+			background-color: red;
+		}
+		
+		li.dropdown {
+			display: inline-block;
+		}
+		
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f9f9f9;
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		}
+		
+		.na2 .dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+		}
+		
+		.dropdown-content a:hover {background-color: #f1f1f1}
+		.dropdown:hover .dropdown-content {display: block;}
+		
+	</style>
+	
+</head>
+<body>
+	
+	<div class="na1">
+		<h3>Navi bar 1</h3>
+		<ul>
+			<li><a class="active" href="#home">Home</a></li>
+			<li><a href="#News">News</a></li>
+			<li><a href="#Contact">Contact</a></li>
+			<li><a href="#about">About</a></li>
+		</ul>
+	</div>
+	
+	<div class="na2">
+		<h3>Navi bar 2</h3>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#news">News</a></li>
+			<li class="dropdown">
+				<a href="javascript:void(0)" class="drop-btn">Dropdown</a>
+				<div class="dropdown-content">
+					<a href="#">Link 1</a>
+					<a href="#">Link 2</a>
+					<a href="#">Link 3</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<br/><br/>
+	<a href="../index.html">Quay về trang bài tập</a>
+	
+</body>
+</html>

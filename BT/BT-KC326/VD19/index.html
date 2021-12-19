@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vidu19</title>
+</head>
+<body background="../picture/3.jpg">
+    <h4>Ví dụ về radio button</h4>
+	<form>
+		<input type="radio" name="sex" value="male" /> Male
+		<br/>
+		<input type="radio" name="sex" value="female" /> Female
+	</form>
+	<br/><br/>
+	
+	
+	
+	<h4>Ví dụ về checkbox</h4>
+	<form>
+		<input type="checkbox" name="bike" value="true"/>
+		I have a bike
+		<br/>
+		<input type="checkbox" name="car" value="true" />
+		I have a car
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về button</h4>
+	<form>
+		<input type="button" onclick="alert('hello')" value="Nhấn vào!!" />
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về Drop-down list</h4>
+	<form>
+		<select name="Laptop">
+			<option value="hp"> Hp </option>
+			<option value="dell"> Dell </option>
+			<option value="acer"> Acer</option>
+		</select>
+		<br/><br/>
+		<input type="submit" />
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về text area</h4>
+	<form>
+		<textarea name="message" rows="10" cols="30">The cat was playing in the garden.
+		</textarea>
+		<br/>
+		<input type="submit" />
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về submit button</h4>
+	<form action="/action.php">
+		First name:<br/>
+		<input type="text" name="firstname" value="Mickey" />
+		<br/>
+		<input type="text" name="lastname" value="Mouse" />
+		<br/><br/>
+		<input type="submit" value="Submit"/>
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về upload file</h4>
+	<form enctype="multipart/form-data" action="upload.php" method="post">
+		Upload this file:
+		<input name="userfile" type="file" />
+		<br/>
+		<input type="submit" value="Upload File" />		
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về reset button</h4>
+	<form action="action.php">
+		First name:<br/>
+		<input type="text" name="firstname" value="Mickey"/>
+		<br/>
+		Last name:<br/>
+		<input type="text" name="lastname" value="Mouse" />
+		<br/><br/>
+		<input type="submit" value="Submit" />
+		<input type="reset" />
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về group</h4>
+	<form action="action.php">
+		<fieldset>
+			<legend>Personal infomation</legend>
+			First name:<br/>
+			<input type="text" name="firstname" value="Mickey"/>
+			<br/>
+			Last name:<br/>
+			<input type="text" name="lastname" value="Mouse" />
+			<br/><br/>
+			<input type="submit" value="Submit" />
+		</fieldset>
+	</form>
+	<br/><br/>
+	
+	
+	<h4>Ví dụ về các thẻ form</h4>
+	<form>
+		
+		Name:<br/>
+		<input type="text" name="name" value="Võ Tiến Đạt"/>
+		<br/>
+		Password:<br/>
+		<input type="password" name="pass" value="datzz1" />
+		<br/>
+		
+		Married:
+		<input type="checkbox" name="married" value="false" />
+		<br/>
+		
+		Male
+		<input type="radio" name="male" checked="checked" />
+		Female
+		<input type="radio" name="female" />
+		<br/>
+		
+		<input type="hidden" />
+		Professional
+		<select>
+			<option>Database</option>
+			<option>Network</option>
+			<option selected="">Student</option>
+		</select>
+		<br/>
+		
+		<textarea name="comment" rows="5" cols="20"></textarea>
+		<br/>
+		
+		<input type="submit" /> <input type="reset" />
+	</form>
+    
+    <br/><br/>
+    <a href="../index.html">Quay về trang chủ</a>
+</body>
+</html>

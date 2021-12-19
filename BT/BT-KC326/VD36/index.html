@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>vidu36</title>
+	
+	<script>
+		function dispAlertBox() {
+			alert('hello, see you again')
+		}
+		
+		function dispConfirmBox() {
+			let status = confirm('Press a button')
+			
+			let statusLabel = document.querySelector('#status-label')
+			statusLabel.innerHTML = status ? 'Status: Ok' : 'Status: No'
+		}
+		
+		function dispPromptBox() {
+			let name = prompt('please enter your name', 'Quang')
+			document.querySelector('#name-label').innerHTML = 'Your name: ' + name
+		}
+
+	</script>
+	
+</head>
+<body>
+	<button onclick='dispAlertBox()'>Display alert box</button>
+	
+	<br/><br/><br/>
+	
+	<form>
+		<input type="button" onclick='dispConfirmBox()' value="Display confirm box">
+		<label id="status-label">Status: None</label>
+	</form>
+	
+	<br/><br/><br/>
+	
+	
+	<form>
+		<input type="button" onclick='dispPromptBox()' value="Display a prompt box">
+		<label id="name-label">Your name: </label>
+	</form>
+	
+	
+	<br /><br />
+	<a href="../index.html">Quay về trang chủ</a>
+	
+</body>
+</html>

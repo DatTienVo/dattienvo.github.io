@@ -1,0 +1,111 @@
+.myClass {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 10px;
+	
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+@media only screen and (max-width: 500px) {
+	#canvas-container {
+		height: 100vh;
+	}
+}
+
+
+#canvas-container {
+	
+	max-width: 90%;
+	max-height: 100%;
+	flex: 1;
+}
+
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+.buttonItem {
+	margin: 5px 0;
+}
+
+
+.input-group {
+	max-height: 15px;
+	max-width: 200px;
+}
+
+.form-input, .input-group-text {
+	max-height: 25px;
+}
+
+
+
+.buttonItem {
+	max-height: 30px;
+	width: 200px ;
+	
+	background-color: blue;
+	color: white;
+}
+
+
+.buttoncolum{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: flex-start;
+	margin-bottom: 5px;
+	
+}
+
+#hh{
+	background-color: bisque;
+	height: 615px;
+}
+
+.chonMau {
+	width: 200px;
+	max-height: 30px;
+	display: flex;
+	
+}
+
+.chonMau-btn {
+	flex: 1;
+}
+
+body, html {
+	width: 100%;
+	height: 80%;
+}
+.hidden{
+	margin-left: -300px;
+	opacity: 0;
+}
+#do{
+	background-color: red;
+}
+#cam{
+	background-color: orange;
+}
+#vang{
+	background-color: yellow;
+}
+#luc{
+	background-color: green;
+}
+#lam{
+	background-color: blue;
+}
+
+#tim{
+	background-color: blueviolet;
+}
+
